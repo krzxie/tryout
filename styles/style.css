@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-image: url(cl.jpg);
+    background-color: black;
+}
+
+
+
+/* Book */
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid #016d53;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform:rotateY(180deg);
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    margin: 10px;
+    transition: transform 0.5s;
+   
+}
+
+button:focus {
+    outline: none;
+    
+}
+
+button:hover i {
+    color: #f09595;
+  
+}
+
+i {
+    font-size: 50px;
+    color: #F4C2C2;
+  
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 6;
+}
+
+#p2 {
+    z-index: 5;
+}
+
+#p3 {
+    z-index: 4;
+}
+
+#p4 {
+    z-index: 3;
+}
+
+#p5 {
+    z-index: 2;
+}
+
+#p6 {
+    z-index: 1;
+}
+
+
+/* style */
+
+/* page 1 */
+.cover-img {
+    width: 350px;
+    height: 500px;
+}
+
+.cover-logo {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 20px;
+    left: 93px;
+}
+
+.title {
+    position: absolute;
+    left: 19px;
+    top: 90px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+    font-size: 13px;
+    color:whitesmoke;
+}
+
+.title2 {
+    position: absolute;
+    left: 50px;
+    top: 101.3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+    font-size: 13px;
+    color:whitesmoke;
+}
+
+.title3 {
+    position: absolute;
+    left: 96px;
+    top: 116px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 8.5px;
+    color:whitesmoke;
+    letter-spacing: -0.2px;
+}
+
+.title4 {
+    position: absolute;
+    left: 60px;
+    top: 125px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 8.2px;
+    color:whitesmoke;
+    letter-spacing: -1px;
+}
+
+.title5 {
+    position: absolute;
+    left: 14px;
+    top: 380px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color:rgb(255, 102, 0);
+    letter-spacing: 1.5px;
+    font-style: bold;
+}
+
+.title6 {
+    position: absolute;
+    left: 10px;
+    top: 400px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 33px;
+    color:rgb(255, 102, 0);
+    letter-spacing: 1.1px;
+}
+
+/* page 2 */
+.paper-profile {
+    width: 350px;
+    height: 500px;
+}
+
+.paper-signature {
+    width: 350px;
+    height: 500px;
+}
+
+.paper-picture {
+    position: absolute;
+    width: 87px;
+    height: 87px;
+    left: 225px;
+    top: 18px;
+    object-fit: contain;
+}
+
+/* page 3 */
+.foreword-content {
+    font-size: 25px;
+    position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    top: 75px;
+}
+
+.paper-foreword {
+    font-size: 10.7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.page-i {
+    font-size: 9px;
+    position: absolute;
+    top: 480px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.i-edition {
+    font-size: 9px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* page 4 */
+.ii-edition {
+    font-size: 9px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.page-ii {
+    font-size: 9px;
+    position: absolute;
+    top: 480px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
